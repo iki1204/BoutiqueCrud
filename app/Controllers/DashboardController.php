@@ -15,7 +15,6 @@ class DashboardController
         ];
 
         render('dashboard/index', [
-            'title' => 'Sistema de Gestión de Boutique',
             'cards' => $cards,
         ]);
     }

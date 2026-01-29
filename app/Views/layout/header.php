@@ -1,5 +1,10 @@
 <?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 $flash = flash_get();
+$authUser = $_SESSION['auth_user'] ?? null;
+$loginUrl = absolute_url('index.php?route=login');
 ?>
 <!doctype html>
 <html lang="es">
@@ -41,6 +46,23 @@ $flash = flash_get();
     </style>
 </head>
 <body class="bg-light">
+<header class="bg-white border-bottom shadow-sm">
+    <nav class="navbar navbar-expand-lg container py-3">
+        <a class="navbar-brand fw-semibold" href="<?= h(absolute_url('index.php?route=dashboard')) ?>">Boutique CRUD</a>
+        <div class="ms-auto d-flex align-items-center gap-3">
+            <?php if ($authUser): ?>
+                <span class="text-muted small">Conectado como <?= h($authUser) ?></span>
+                <a class="btn btn-outline-secondary btn-sm" href="<?= h(absolute_url('index.php?route=logout')) ?>">
+                    <i class="bi bi-box-arrow-right me-1"></i>Salir
+                </a>
+            <?php else: ?>
+                <a class="btn btn-primary btn-sm" href="<?= h($loginUrl) ?>">
+                    <i class="bi bi-shield-lock me-1"></i>Iniciar sesión
+                </a>
+            <?php endif; ?>
+        </div>
+    </nav>
+</header>
 <main class="container py-4">
     <h1 class="h3 mb-3"><?= h($title ?? '') ?></h1>
     <?php if ($flash): ?>

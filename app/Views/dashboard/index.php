@@ -24,17 +24,16 @@
           <span class="icon-wrap">
             <i class="bi <?= h($icon) ?>"></i>
           </span>
-          <span class="badge text-bg-light">Nuevo</span>
+          <div class="mt-auto">
+            <a class="btn btn-primary app-action" href="index.php?route=<?= h($route) ?>">
+              Ir al módulo
+              <i class="bi bi-arrow-up-right ms-1"></i>
+            </a>
+          </div>
         </div>
         <div>
           <h5 class="card-title mb-2"><?= h($t) ?></h5>
           <p class="card-text text-muted mb-0"><?= h($d) ?></p>
-        </div>
-        <div class="mt-auto">
-          <a class="btn btn-primary app-action" href="index.php?route=<?= h($route) ?>">
-            Ir al módulo
-            <i class="bi bi-arrow-up-right ms-1"></i>
-          </a>
         </div>
       </div>
     </div>

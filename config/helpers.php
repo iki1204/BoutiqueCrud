@@ -25,6 +25,15 @@ function redirect(string $to): void {
     exit;
 }
 
+function absolute_url(string $path): string {
+    $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+    $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+    $basePath = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
+    $path = ltrim($path, '/');
+    $base = $basePath === '' ? '' : $basePath . '/';
+    return $scheme . '://' . $host . '/' . $base . $path;
+}
+
 function render(string $view, array $data = []): void {
     extract($data, EXTR_SKIP);
     require __DIR__ . '/../app/Views/layout/header.php';
