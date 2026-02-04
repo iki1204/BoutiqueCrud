@@ -26,10 +26,13 @@ return [
         'modules' => ['cliente', 'ventas', 'detalle_venta', 'proveedor'],
       ],
     ],
+    'default_role' => 'admin',
     'user_roles' => [
       'admin' => 'admin',
       'developer' => 'developer',
       'supervisor' => 'supervisor',
+      'root' => 'admin',
+      'adminBoutique' => 'admin',
     ],
   ],
 ];

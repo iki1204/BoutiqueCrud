@@ -18,9 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     redirect(url('/public/login.php'));
   }
 
-  $role = $config['auth']['user_roles'][$username] ?? null;
-  if (!$role) {
-    flash_set('danger', 'Usuario no autorizado para el panel.');
+  $role = $config['auth']['user_roles'][$username] ?? ($config['auth']['default_role'] ?? null);
+  if (!$role || empty($config['auth']['roles'][$role])) {
+    flash_set('danger', 'Rol inválido para el panel.');
     redirect(url('/public/login.php'));
   }
 

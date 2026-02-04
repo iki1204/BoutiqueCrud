@@ -40,7 +40,7 @@ $flash = flash_get();
               </button>
             </form>
             <div class="text-muted small mt-3">
-              Usuarios permitidos: admin, developer, supervisor (según mysql.user).
+              Ingresa con un usuario válido de MySQL (ej. root o adminBoutique).
             </div>
           </div>
         </div>
