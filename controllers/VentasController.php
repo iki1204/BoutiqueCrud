@@ -32,7 +32,7 @@ class VentasController extends BaseController
             $detalles = $this->getDetallePayload();
             $payload['TOTAL'] = $this->calcularTotal($detalles);
             $this->ventaModel->create($payload, $detalles);
-            $this->redirect('/?controller=ventas');
+            $this->redirect('/ventas');
         }
 
         $this->render('ventas/form', [
@@ -41,7 +41,7 @@ class VentasController extends BaseController
             'clientes' => $this->clienteModel->getAll(),
             'empleados' => $this->empleadoModel->getAll(),
             'productos' => $this->productoModel->getAll(),
-            'action' => '/?controller=ventas&action=create',
+            'action' => '/ventas/crear',
         ]);
     }
 
@@ -57,12 +57,12 @@ class VentasController extends BaseController
             $detalles = $this->getDetallePayload();
             $payload['TOTAL'] = $this->calcularTotal($detalles);
             $this->ventaModel->update($id, $payload, $detalles);
-            $this->redirect('/?controller=ventas');
+            $this->redirect('/ventas');
         }
 
         $venta = $this->ventaModel->getById($id);
         if (!$venta) {
-            $this->redirect('/?controller=ventas');
+            $this->redirect('/ventas');
         }
 
         $this->render('ventas/form', [
@@ -71,7 +71,7 @@ class VentasController extends BaseController
             'clientes' => $this->clienteModel->getAll(),
             'empleados' => $this->empleadoModel->getAll(),
             'productos' => $this->productoModel->getAll(),
-            'action' => '/?controller=ventas&action=edit&id=' . $id,
+            'action' => '/ventas/editar/' . $id,
         ]);
     }
 
@@ -81,7 +81,7 @@ class VentasController extends BaseController
         if ($id > 0) {
             $this->ventaModel->delete($id);
         }
-        $this->redirect('/?controller=ventas');
+        $this->redirect('/ventas');
     }
 
     private function getVentaPayload(): array

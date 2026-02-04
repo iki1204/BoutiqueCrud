@@ -7,7 +7,7 @@ class ClienteController extends CrudController
     public function __construct()
     {
         $this->title = 'Cliente';
-        $this->baseRoute = '/?controller=cliente';
+        $this->baseRoute = '/clientes';
         $this->fields = ['CLIENTE_ID', 'CODIGO', 'APELLIDO', 'TELEFONO', 'EMAIL', 'DIRECCION'];
         $this->labels = [
             'CLIENTE_ID' => 'ID',

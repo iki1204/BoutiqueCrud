@@ -34,7 +34,7 @@ class CrudController extends BaseController
             'title' => "Crear {$this->title}",
             'fields' => $this->fields,
             'labels' => $this->labels,
-            'action' => $this->baseRoute . '&action=create',
+            'action' => $this->baseRoute . '/crear',
             'cancelRoute' => $this->baseRoute,
             'values' => [],
         ]);
@@ -62,7 +62,7 @@ class CrudController extends BaseController
             'title' => "Editar {$this->title}",
             'fields' => $this->fields,
             'labels' => $this->labels,
-            'action' => $this->baseRoute . '&action=edit&id=' . $id,
+            'action' => $this->baseRoute . '/editar/' . $id,
             'cancelRoute' => $this->baseRoute,
             'values' => $item,
         ]);

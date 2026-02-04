@@ -7,7 +7,7 @@ class CategoriaController extends CrudController
     public function __construct()
     {
         $this->title = 'Categoría';
-        $this->baseRoute = '/?controller=categoria';
+        $this->baseRoute = '/categorias';
         $this->fields = ['CATEGORIA_ID', 'CODIGO', 'DESCRIPCION'];
         $this->labels = [
             'CATEGORIA_ID' => 'ID',

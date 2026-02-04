@@ -7,13 +7,13 @@ class DashboardController extends BaseController
     public function index(): void
     {
         $tables = [
-            'Categorías' => ['_CODE_CATEGORIA', 'CATEGORIA_ID', '/?controller=categoria'],
-            'Clientes' => ['_CODE_CLIENTE', 'CLIENTE_ID', '/?controller=cliente'],
-            'Empleados' => ['_CODE_EMPLEADO', 'EMPLEADO_ID', '/?controller=empleado'],
-            'Proveedores' => ['_CODE_PROVEEDOR', 'PROVEEDOR_ID', '/?controller=proveedor'],
-            'Tallas' => ['_CODE_TALLA', 'TALLA_ID', '/?controller=talla'],
-            'Productos' => ['_CODE_PRODUCTO', 'PRODUCTO_ID', '/?controller=producto'],
-            'Ventas' => ['_CODE_VENTAS', 'VENTA_ID', '/?controller=ventas'],
+            'Categorías' => ['_CODE_CATEGORIA', 'CATEGORIA_ID', '/categorias'],
+            'Clientes' => ['_CODE_CLIENTE', 'CLIENTE_ID', '/clientes'],
+            'Empleados' => ['_CODE_EMPLEADO', 'EMPLEADO_ID', '/empleados'],
+            'Proveedores' => ['_CODE_PROVEEDOR', 'PROVEEDOR_ID', '/proveedores'],
+            'Tallas' => ['_CODE_TALLA', 'TALLA_ID', '/tallas'],
+            'Productos' => ['_CODE_PRODUCTO', 'PRODUCTO_ID', '/productos'],
+            'Ventas' => ['_CODE_VENTAS', 'VENTA_ID', '/ventas'],
         ];
 
         $cards = [];

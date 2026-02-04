@@ -7,7 +7,7 @@ class ProductoController extends CrudController
     public function __construct()
     {
         $this->title = 'Producto';
-        $this->baseRoute = '/?controller=producto';
+        $this->baseRoute = '/productos';
         $this->fields = [
             'PRODUCTO_ID',
             'CATEGORIA_ID',

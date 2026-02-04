@@ -7,7 +7,7 @@ class ProveedorController extends CrudController
     public function __construct()
     {
         $this->title = 'Proveedor';
-        $this->baseRoute = '/?controller=proveedor';
+        $this->baseRoute = '/proveedores';
         $this->fields = [
             'PROVEEDOR_ID',
             'NOMBRE_EMPRESA',

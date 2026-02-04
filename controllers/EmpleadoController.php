@@ -7,7 +7,7 @@ class EmpleadoController extends CrudController
     public function __construct()
     {
         $this->title = 'Empleado';
-        $this->baseRoute = '/?controller=empleado';
+        $this->baseRoute = '/empleados';
         $this->fields = [
             'EMPLEADO_ID',
             'CODIGO',

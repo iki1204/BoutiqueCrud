@@ -7,7 +7,7 @@ class TallaController extends CrudController
     public function __construct()
     {
         $this->title = 'Talla';
-        $this->baseRoute = '/?controller=talla';
+        $this->baseRoute = '/tallas';
         $this->fields = ['TALLA_ID', 'CODIGO', 'DESCRIPCION'];
         $this->labels = [
             'TALLA_ID' => 'ID',
