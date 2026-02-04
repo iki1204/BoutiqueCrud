@@ -25,7 +25,7 @@ drop table if exists VENTAS;
 /*==============================================================*/
 create table CATEGORIA
 (
-   CATEGORIA_ID         int not null,
+   CATEGORIA_ID         int not null auto_increment,
    CODIGO               varchar(50),
    DESCRIPCION          varchar(200),
    primary key (CATEGORIA_ID)
@@ -36,7 +36,7 @@ create table CATEGORIA
 /*==============================================================*/
 create table CLIENTE
 (
-   CLIENTE_ID           int not null,
+   CLIENTE_ID           int not null auto_increment,
    NOMBRE               varchar(100),
    APELLIDO             varchar(50),
    TELEFONO             varchar(15),
@@ -50,7 +50,7 @@ create table CLIENTE
 /*==============================================================*/
 create table DETALLE_VENTA
 (
-   DETALLE_ID           int not null,
+   DETALLE_ID           int not null auto_increment,
    VENTA_ID             int not null,
    PRODUCTO_ID          int not null,
    CANTIDAD             int,
@@ -63,7 +63,7 @@ create table DETALLE_VENTA
 /*==============================================================*/
 create table EMPLEADO
 (
-   EMPLEADO_ID          int not null,
+   EMPLEADO_ID          int not null auto_increment,
    NOMBRE               varchar(100),
    APELLIDO             varchar(50),
    CARGO                varchar(50),
@@ -78,7 +78,7 @@ create table EMPLEADO
 /*==============================================================*/
 create table PRODUCTO
 (
-   PRODUCTO_ID          int not null,
+   PRODUCTO_ID          int not null auto_increment,
    CATEGORIA_ID         int not null,
    PROVEEDOR_ID         int not null,
    TALLA_ID             int not null,
@@ -96,7 +96,7 @@ create table PRODUCTO
 /*==============================================================*/
 create table PROVEEDOR
 (
-   PROVEEDOR_ID         int not null,
+   PROVEEDOR_ID         int not null auto_increment,
    NOMBRE_EMPRESA       varchar(50),
    TELEFONO             varchar(15),
    EMAIL                varchar(100),
@@ -110,7 +110,7 @@ create table PROVEEDOR
 /*==============================================================*/
 create table TALLA
 (
-   TALLA_ID             int not null,
+   TALLA_ID             int not null auto_increment,
    CODIGO               varchar(50),
    DESCRIPCION          varchar(200),
    primary key (TALLA_ID)
@@ -121,7 +121,7 @@ create table TALLA
 /*==============================================================*/
 create table VENTAS
 (
-   VENTA_ID             int not null,
+   VENTA_ID             int not null auto_increment,
    CLIENTE_ID           int not null,
    EMPLEADO_ID          int not null,
    FECHA                datetime,
@@ -151,4 +151,3 @@ alter table VENTAS add constraint FK_CLIENTE_VENTAS foreign key (CLIENTE_ID)
 
 alter table VENTAS add constraint FK_EMPLEADO_VENTA foreign key (EMPLEADO_ID)
       references EMPLEADO (EMPLEADO_ID) on delete restrict on update restrict;
-
