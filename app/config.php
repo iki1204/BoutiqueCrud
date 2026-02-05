@@ -20,7 +20,7 @@ return [
       ],
       'developer' => [
         'label' => 'Desarrollador',
-        'modules' => ['categoria', 'talla', 'producto'],
+        'modules' => ['categoria', 'talla', 'producto','cliente','empleado','proveedor','ventas'],
         'write' => true,
       ],
       'supervisor' => [

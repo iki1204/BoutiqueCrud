@@ -7,6 +7,16 @@ $m = $_GET['m'] ?? '';
 $user = auth_user();
 $roleLabel = $user['role_label'] ?? 'Usuario';
 $visibleMeta = array_filter($meta, fn($def, $key) => auth_can_access($key), ARRAY_FILTER_USE_BOTH);
+$navIcons = [
+  'categoria' => 'bi-tags',
+  'talla' => 'bi-rulers',
+  'proveedor' => 'bi-truck',
+  'cliente' => 'bi-people',
+  'empleado' => 'bi-person-badge',
+  'producto' => 'bi-box-seam',
+  'ventas' => 'bi-cash-stack',
+  'detalle_venta' => 'bi-receipt',
+];
 ?>
 <!doctype html>
 <html lang="es">
@@ -37,7 +47,7 @@ $visibleMeta = array_filter($meta, fn($def, $key) => auth_can_access($key), ARRA
         <div class="text-uppercase small text-muted px-3 mt-3 mb-1">Gestión</div>
         <?php foreach ($visibleMeta as $key => $def): ?>
           <a class="nav-link px-3 py-2 rounded <?= $m===$key?'active':'' ?>" href="<?= url('/public/index.php?m=' . $key) ?>">
-            <i class="bi bi-table me-2"></i><?= h($def['title']) ?>
+            <i class="bi <?= h($navIcons[$key] ?? 'bi-table') ?> me-2"></i><?= h($def['title']) ?>
           </a>
         <?php endforeach; ?>
       </div>
@@ -54,11 +64,8 @@ $visibleMeta = array_filter($meta, fn($def, $key) => auth_can_access($key), ARRA
             <div class="text-muted small"><?= h($page_subtitle ?? 'Panel de administración') ?></div>
           </div>
           <div class="d-flex gap-2">
-            <a class="btn btn-outline-secondary btn-sm" href="<?= url('/public/index.php') ?>">
+            <a class="btn btn-outline-secondary btn-sm" href="<?= url('/public/landing.php') ?>">
               <i class="bi bi-house"></i>
-            </a>
-            <a class="btn btn-outline-secondary btn-sm" href="<?= url('/public/profile.php') ?>">
-              <i class="bi bi-person-circle"></i>
             </a>
             <a class="btn btn-outline-danger btn-sm" href="<?= url('/public/logout.php') ?>">
               <i class="bi bi-box-arrow-right"></i>

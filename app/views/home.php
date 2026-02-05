@@ -33,7 +33,7 @@ ob_start();
       </div>
       <div class="p-3 border-bottom">
         <div class="input-group input-group-sm">
-          <input class="form-control" type="search" placeholder="Buscar en la tabla..." data-table-search="#lastSalesTable">
+          <input class="form-control" type="search" placeholder="Buscar Registros..." data-table-search="#lastSalesTable">
           <button class="btn btn-outline-secondary" type="button" data-table-search-button>Buscar</button>
         </div>
       </div>

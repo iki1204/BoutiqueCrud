@@ -16,7 +16,7 @@ ob_start();
   <div class="card shadow-sm">
     <div class="p-3 border-bottom">
       <div class="input-group input-group-sm">
-        <input class="form-control" type="search" placeholder="Buscar en la tabla..." data-table-search="#ventasTable">
+        <input class="form-control" type="search" placeholder="Buscar ..." data-table-search="#ventasTable">
         <button class="btn btn-outline-secondary" type="button" data-table-search-button>Buscar</button>
       </div>
     </div>

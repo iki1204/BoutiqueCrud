@@ -33,8 +33,7 @@ $config = require __DIR__ . '/../app/config.php';
             <h1 class="display-5 fw-semibold">Estilo curado para cada ocasión.</h1>
             <p class="lead text-muted">Prendas seleccionadas, asesoría cercana y una experiencia de compra cálida.</p>
             <div class="d-flex flex-wrap gap-3">
-              <a class="btn btn-primary btn-lg" href="#coleccion">Ver colección</a>
-              <a class="btn btn-outline-secondary btn-lg" href="#contacto">Agenda una cita</a>
+              <img src="../assets/img/background.jpg" class="img-fluid rounded" alt="Imagen de fondo de la boutique">
             </div>
           </div>
           <div class="col-12 col-lg-6">
@@ -47,30 +46,27 @@ $config = require __DIR__ . '/../app/config.php';
                 <li><i class="bi bi-check2"></i> Accesorios minimalistas.</li>
               </ul>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="coleccion" class="landing-simple__section">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-12 col-md-4">
-            <div class="landing-simple__tile">
-              <h5>Office chic</h5>
-              <p class="text-muted">Cortes limpios y tonos neutros.</p>
-            </div>
-          </div>
-          <div class="col-12 col-md-4">
-            <div class="landing-simple__tile">
-              <h5>Weekend</h5>
-              <p class="text-muted">Denim premium y básicos cómodos.</p>
-            </div>
-          </div>
-          <div class="col-12 col-md-4">
-            <div class="landing-simple__tile">
-              <h5>Eventos</h5>
-              <p class="text-muted">Brillo sutil y siluetas elegantes.</p>
+            <div class="container mt-4">
+              <div class="row g-4">
+                <div class="col-12 col-md-4">
+                  <div class="landing-simple__tile">
+                    <h5>Office chic</h5>
+                    <p class="text-muted">Cortes limpios y tonos neutros.</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="landing-simple__tile">
+                    <h5>Weekend</h5>
+                    <p class="text-muted">Denim premium y básicos cómodos.</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="landing-simple__tile">
+                    <h5>Eventos</h5>
+                    <p class="text-muted">Brillo sutil y siluetas elegantes.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
