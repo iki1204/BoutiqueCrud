@@ -73,39 +73,7 @@ $config = require __DIR__ . '/../app/config.php';
       </div>
     </section>
 
-    <section id="contacto" class="landing-simple__cta">
-      <div class="container">
-        <div class="row align-items-center g-4">
-          <div class="col-12 col-lg-7">
-            <h2 class="fw-semibold">¿Quieres una recomendación personalizada?</h2>
-            <p class="text-white-50">Escríbenos y coordinamos tu visita.</p>
-          </div>
-          <div class="col-12 col-lg-5">
-            <form class="landing-simple__form">
-              <div class="mb-3">
-                <label class="form-label">Nombre</label>
-                <input class="form-control" type="text" placeholder="Tu nombre">
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input class="form-control" type="email" placeholder="tu@email.com">
-              </div>
-              <button class="btn btn-primary w-100" type="button">Enviar</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="landing-simple__footer">
-    <div class="container">
-      <div class="d-flex flex-wrap justify-content-between gap-2">
-        <span>© <?= date('Y') ?> <?= h($config['app']['name']) ?>.</span>
-        <span class="text-muted">Moda consciente y asesoría cercana.</span>
-      </div>
-    </div>
-  </footer>
+   
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
