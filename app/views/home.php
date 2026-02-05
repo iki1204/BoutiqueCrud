@@ -31,8 +31,14 @@ ob_start();
         <strong>Últimas ventas</strong>
         <span class="text-muted small">· últimas 8</span>
       </div>
+      <div class="p-3 border-bottom">
+        <div class="input-group input-group-sm">
+          <input class="form-control" type="search" placeholder="Buscar en la tabla..." data-table-search="#lastSalesTable">
+          <button class="btn btn-outline-secondary" type="button" data-table-search-button>Buscar</button>
+        </div>
+      </div>
       <div class="table-responsive">
-        <table class="table table-hover align-middle mb-0">
+        <table class="table table-hover align-middle mb-0" id="lastSalesTable">
           <thead class="table-light">
             <tr>
               <th>ID</th>
