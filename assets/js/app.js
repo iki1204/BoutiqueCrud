@@ -100,7 +100,7 @@
   const inputs = document.querySelectorAll('[data-table-search]');
   if(!inputs.length) return;
 
-  inputs.forEach(input=>{
+  function filterRows(input){
     const selector = input.getAttribute('data-table-search');
     if(!selector) return;
 
@@ -109,12 +109,24 @@
     if(!tbody) return;
 
     const rows = Array.from(tbody.rows);
-    input.addEventListener('input', ()=>{
-      const query = input.value.trim().toLowerCase();
-      rows.forEach(row=>{
-        const text = row.textContent.toLowerCase();
-        row.style.display = !query || text.includes(query) ? '' : 'none';
-      });
+    const query = input.value.trim().toLowerCase();
+    const terms = query ? query.split(/\s+/).filter(Boolean) : [];
+
+    rows.forEach(row=>{
+      const text = row.textContent.toLowerCase();
+      const matches = terms.length === 0 || terms.every(term => text.includes(term));
+      row.style.display = matches ? '' : 'none';
+    });
+  }
+
+  inputs.forEach(input=>{
+    const button = input.closest('.input-group')?.querySelector('[data-table-search-button]');
+    button?.addEventListener('click', () => filterRows(input));
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        filterRows(input);
+      }
     });
   });
 })();

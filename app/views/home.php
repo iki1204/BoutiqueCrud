@@ -32,7 +32,10 @@ ob_start();
         <span class="text-muted small">· últimas 8</span>
       </div>
       <div class="p-3 border-bottom">
-        <input class="form-control form-control-sm" type="search" placeholder="Buscar en la tabla..." data-table-search="#lastSalesTable">
+        <div class="input-group input-group-sm">
+          <input class="form-control" type="search" placeholder="Buscar en la tabla..." data-table-search="#lastSalesTable">
+          <button class="btn btn-outline-secondary" type="button" data-table-search-button>Buscar</button>
+        </div>
       </div>
       <div class="table-responsive">
         <table class="table table-hover align-middle mb-0" id="lastSalesTable">

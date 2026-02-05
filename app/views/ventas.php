@@ -15,7 +15,10 @@ ob_start();
 
   <div class="card shadow-sm">
     <div class="p-3 border-bottom">
-      <input class="form-control form-control-sm" type="search" placeholder="Buscar en la tabla..." data-table-search="#ventasTable">
+      <div class="input-group input-group-sm">
+        <input class="form-control" type="search" placeholder="Buscar en la tabla..." data-table-search="#ventasTable">
+        <button class="btn btn-outline-secondary" type="button" data-table-search-button>Buscar</button>
+      </div>
     </div>
     <div class="table-responsive">
       <table class="table table-hover align-middle mb-0" id="ventasTable">
@@ -178,7 +181,10 @@ ob_start();
       <div class="card shadow-sm">
         <div class="card-header bg-white"><strong>Productos</strong></div>
         <div class="p-3 border-bottom">
-          <input class="form-control form-control-sm" type="search" placeholder="Buscar en la tabla..." data-table-search="#ventaProductosTable">
+          <div class="input-group input-group-sm">
+            <input class="form-control" type="search" placeholder="Buscar en la tabla..." data-table-search="#ventaProductosTable">
+            <button class="btn btn-outline-secondary" type="button" data-table-search-button>Buscar</button>
+          </div>
         </div>
         <div class="table-responsive">
           <table class="table table-hover align-middle mb-0" id="ventaProductosTable">
