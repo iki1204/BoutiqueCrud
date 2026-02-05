@@ -8,8 +8,8 @@ return [
     'charset' => 'utf8mb4',
   ],
   'app' => [
-    'name' => 'Boutique Admin',
-    'base_url' => '/BoutiqueCrud', // si lo despliegas en subcarpeta, ej: '/boutique_crud/public'
+    'name' => 'Boutique ',
+    'base_url' => '/BoutiqueCrud',
   ],
   'auth' => [
     'roles' => [
@@ -19,7 +19,7 @@ return [
       ],
       'developer' => [
         'label' => 'Desarrollador',
-        'modules' => ['categoria', 'talla', 'producto'],
+        'modules' => '*',
       ],
       'supervisor' => [
         'label' => 'Supervisor',
@@ -28,11 +28,9 @@ return [
     ],
     'default_role' => 'admin',
     'user_roles' => [
-      'admin' => 'admin',
-      'developer' => 'developer',
-      'supervisor' => 'supervisor',
-      'root' => 'admin',
-      'adminBoutique' => 'admin',
+      'devBoutique' => 'developer',
+      'supBoutique' => 'supervisor',
+      'adminBoutique' => 'administrador',
     ],
   ],
 ];
